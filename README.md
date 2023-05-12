@@ -1,13 +1,13 @@
 ## React Nodejs Socket.io
 
-A simple React example using a Nodejs backend with Socket.io Connection. And TailwindCSS for the styles
+Un ejemplo simple de React usando NodeJs como stack backend, junto con la tecnología Socket.io.
+Tailwind se uso cómo librería de estilos.
 
-![](./docs/screenshot.jpg)
+![](./docs/example.png)
 
-## Tools
+## Herramientas usadas
 
-- Node.js
-  - express
-  - socket.io
-- React
-- [ngrok](https://ngrok.com/)
+React como tecnología front.
+Socket.io para realizar las conexiones.
+Express como framework backend.
+Node.JS como entorno de ejecución de Javascript.

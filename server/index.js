@@ -30,19 +30,20 @@ io.on("connection", (socket) => {
   socket.broadcast.emit("connectedUser", io.sockets.sockets.size);
   console.log("El contador de usuarios es: ", io.sockets.sockets.size);
 
-  socket.on("message", (body) => {
+  socket.on("message", (body, from) => {
+    console.log("Usuario ", from, " dijo ", body)
     socket.broadcast.emit("message", {
       body,
-      from: socket.id.slice(8),
+      from
     });
   });
 
-  socket.on("disconnection", () => {
+  socket.on("disconnect", () => {
     socket.broadcast.emit("disconnectedUser", io.sockets.sockets.size);
-    console.log("Un usuario se desconectó. ", io.sockets.sockets.size, " usuarios restantes.");  
+    console.log("Un usuario se desconectó. ", io.sockets.sockets.size, " usuarios restantes."); 
   });
 
 });
 
 server.listen(PORT);
-console.log(`server on port ${PORT}`);
+console.log(`Sirviendo en el puerto ${PORT}`);
